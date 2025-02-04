@@ -15,23 +15,47 @@ p {
 }
 .container {
     margin: 50px auto;
-    width: 300px;
+    width: 90%;
+    max-width: 1000px;
+    min-width: 300px;
     background: white;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+}
+
+.start-buttons {
+    display: flex;
+    border: none;
+    gap: 10px;  
+}
+.control-buttons {
+    display: flex;
+    gap: 10px;  /* Space between Pause & Reset */
+    margin-top: 15px;  /* Space below Start buttons */
+}
+
 canvas {
     width: 100px;
     height: 150px;
     background: transparent;
 }
-.controls button {
-    padding: 10px;
+button {
+    padding: 10px 15px;
     margin: 5px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
 }
 .start { background: #c0f1ae; color: #31402b; }
 .pause { background: #fffdad; color: #404132; }
