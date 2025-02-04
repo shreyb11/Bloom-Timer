@@ -33,3 +33,6 @@ canvas {
     border-radius: 5px;
     cursor: pointer;
 }
+.start { background: #c0f1ae; color: #31402b; }
+.pause { background: #fffdad; color: #404132; }
+.reset { background: #ffadad; color: #391e1e; }
