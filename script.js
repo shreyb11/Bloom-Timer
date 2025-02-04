@@ -1,14 +1,24 @@
 let timeLeft = 0;
 let interval;
+let isPaused = false;
 const countdownEl = document.getElementById("timer");
 
 function startTimer(duration) {
 
     timeLeft = duration;
-
     clearInterval(interval);
-
     interval = setInterval(updateCountdown, 1000);
+
+    isPaused = false;
+
+}
+
+function continueTimer() {
+    if (isPaused != false && timeLeft > 0) {
+        clearInterval(interval);
+        interval = setInterval(updateCountdown, 1000);
+        isPaused = false;
+    }
 }
 
 function updateCountdown() {
@@ -41,4 +51,20 @@ document.getElementById("start5").addEventListener("click", function() {
 
 document.getElementById("start25").addEventListener("click", function() {
     startTimer(1500);  // 25 minutes (1500 seconds)
+});
+
+document.getElementById("pause").addEventListener("click", function() {
+    clearInterval(interval);
+    isPaused = true;
+});
+
+document.getElementById("continue").addEventListener("click", function () {
+    continueTimer();
+});
+
+document.getElementById("reset").addEventListener("click", function() {
+    clearInterval(interval);
+    timeLeft = 0;
+    countdownEl.innerHTML = "00:00";
+    isPaused = false;
 });
