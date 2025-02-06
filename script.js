@@ -39,6 +39,7 @@ function updateCountdown() {
         clearInterval(interval);
         countdownEl.innerHTML = "🌱 Time's up! 🌱";
         alert.play();
+        alert.play();
     }
 }
 
