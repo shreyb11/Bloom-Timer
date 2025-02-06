@@ -2,6 +2,7 @@ let timeLeft = 0;
 let interval;
 let isPaused = false;
 const countdownEl = document.getElementById("timer");
+const alert = new Audio("Bell-Alert.mp3");
 
 function startTimer(duration) {
 
@@ -37,6 +38,7 @@ function updateCountdown() {
     } else {
         clearInterval(interval);
         countdownEl.innerHTML = "🌱 Time's up! 🌱";
+        alert.play();
     }
 }
 
